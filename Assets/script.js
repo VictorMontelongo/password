@@ -21,7 +21,7 @@ var finalArr = [];
 function getPrompts() {
   finalArr = [];
   numOfCharaters = prompt("How many characters do you want in your password?")
-  //  // I Googled how to confirm and concat this option.
+  //  // I Googled how to confirm and concat this option. This should bring all the Arrays into finalArr. 
   if (confirm("Do you need uppercase letters in your password?")) {
     finalArr = finalArr.concat(upperCaseLetters);
   }
@@ -39,11 +39,12 @@ function getPrompts() {
 
 function generatePassword() {
   // this should generate a new password based on the prompts asked above with the for loop
-  var finalPassword = "";
-  for (var i = 0; i < numOfCharaters; i++)
+  var password = "";
+  for (var i = 0; i < numOfCharaters; i++) {
     var randomIndex = Math.floor(Math.random() * finalArr.length)
-  finalPassword = password + finalArr[randomIndex];
-  return finalPassword;
+    password = password + finalArr[randomIndex];
+  }
+  return password;
 }
 
 // No Touch Write password to the #password input
